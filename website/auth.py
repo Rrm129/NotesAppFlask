@@ -4,6 +4,7 @@ from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 
+
 auth = Blueprint('auth', __name__)
 
 
@@ -41,7 +42,7 @@ def sign_up():
     if request.method == 'POST':
 
         email = request.form.get('email')
-        first_name = request.form.get('firstname')
+        full_name = request.form.get('fullname')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
@@ -51,8 +52,8 @@ def sign_up():
         elif len(email) < 4:
             flash('Email is to short', category='error')
             pass
-        elif len(first_name) < 2:
-            flash('First name is to short', category='error')
+        elif len(full_name) < 2:
+            flash('Name is too short', category='error')
             pass
         elif password1 != password2:
             flash('Password does not match', category='error')
@@ -61,11 +62,11 @@ def sign_up():
             flash('Password is to short', category='error')
             pass
         else:
-            new_user = User(email=email, first_name=first_name,
+            new_user = User(email=email, full_name=full_name,
                             password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            login_user(new_user, remember=True)
             flash('Account created', category='success')
             return redirect(url_for('views.home'))
 

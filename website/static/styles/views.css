@@ -1,0 +1,24 @@
+/* .row {
+    margin-top: 30px;
+} */
+
+.tile1, .tile2{
+
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 30px;
+
+}
+
+.btn-addnote{
+    background-color: #f47524;
+    color: white;
+    width: 50%;
+}
+
+.hrline {
+    margin-top: 40px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}

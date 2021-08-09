@@ -1,8 +1,8 @@
-.form-login {
+.form-login, .form-signup {
   padding: 20px;
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 100px;
+  margin-top: 70px;
   border: black;
   border-width: 1px;
   border-radius: 9px;
@@ -17,7 +17,7 @@ label {
   margin-top: 10px;
 }
 
-.btn-login {
+.btn-login, .btn-signup {
   color: white;
   background-color: #f47524;
   width: 100%;
