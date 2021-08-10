@@ -1,13 +1,13 @@
-/* .row {
-    margin-top: 30px;
-} */
 
 .tile1, .tile2{
-
     padding-left: 50px;
     padding-right: 50px;
     margin-top: 30px;
+    padding-bottom: 50px;
+}
 
+#note {
+    min-height: 300px;
 }
 
 .btn-addnote{

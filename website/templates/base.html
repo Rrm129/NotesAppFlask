@@ -18,11 +18,12 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0d5330;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">My Notes</a>
+            <a class="navbar-brand" href="/home">My Notes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ms-auto">
 
@@ -40,30 +41,37 @@
             </div>
         </div>
     </nav>
+
     <section>
+
         {% with messages = get_flashed_messages(with_categories = true) %}
         {% if messages %}
         {% for category, message in messages %}
         {% if category == 'error' %}
+
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>{{message}}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
 
         {% else %}
+
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{message}}
+            <strong>{{message}}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
+
         {% endif %}
         {% endfor %}
         {% endif %}
         {% endwith %}
+
     </section>
 
     <div class="container-fluid">
+
         {% block content %}
-        <h1>Home Page</h1>
+
         {% endblock %}
 
     </div>
